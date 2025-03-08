@@ -8,6 +8,8 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/todos' => [[['_route' => 'app_api', '_controller' => 'App\\Controller\\ApiController::index'], null, null, null, false, false, null]],
+        '/api/todos' => [[['_route' => 'api_todos', '_controller' => 'App\\Controller\\ApiController::getTodos'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

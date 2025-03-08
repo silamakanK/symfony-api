@@ -11,7 +11,7 @@
     <h1>Liste des Todos</h1>
     <ul>
         {% for todo in todos %}
-            <li>{{ todo.titre }} - {% if todo.done %}✔️{% else %}❌{% endif %}</li>
+            <li>{{ todo.title }} - {% if todo.done %}✔️{% else %}❌{% endif %}</li>
         {% endfor %}
     </ul>
 {% endblock %}
