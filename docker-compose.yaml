@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  postgres:
+    build: ./docker/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-root}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-passer}
+      POSTGRES_DB: ${POSTGRES_DB:-db_api}
+  adminer:
+    build: ./docker/adminer
+    ports:
+      - "8080:8080"
+  symfony:
+    build: ./docker/symfony
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/var/www/html
+
+
+volumes:
+  db-data:
